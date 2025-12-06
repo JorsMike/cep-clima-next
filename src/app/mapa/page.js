@@ -25,7 +25,7 @@ export default function MapaPage() {
 
       const script = document.createElement('script');
       // SUBSTITUA "SUA_CHAVE_GOOGLE_MAPS" PELA SUA CHAVE REAL
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB0Vi1d5cSEmOAAEpZlNuo5T-l7D5wmN2s&libraries=places,marker&v=weekly`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_GOOGLE_MAPS&libraries=places,marker&v=weekly`;
       script.async = true;
       script.defer = true;
       script.onload = () => initMap();
