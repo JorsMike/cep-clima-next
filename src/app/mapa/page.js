@@ -1,13 +1,13 @@
 // src/app/mapa/page.js
 'use client'; 
 
-import { useEffect, useRef, useState, Suspense } from 'react'; // Adicionado Suspense
+import { useEffect, useRef, useState, Suspense } from 'react'; 
 import { useSearchParams, useRouter } from 'next/navigation';
 
-// 1. Criamos um componente interno só para o conteúdo que usa SearchParams
+// 1. COMPONENTE INTERNO: Contém a lógica que lê a URL (?lat=...&lng=...)
 function MapaContent() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams(); // O causador do erro (precisa de Suspense)
   
   const latParam = searchParams.get('lat');
   const lngParam = searchParams.get('lng');
@@ -22,7 +22,7 @@ function MapaContent() {
         return;
       }
       const script = document.createElement('script');
-      // ATENÇÃO: Verifique se sua chave está aqui
+      // --- COLOQUE SUA CHAVE ABAIXO ---
       script.src = `https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_GOOGLE_MAPS&libraries=places,marker&v=weekly`;
       script.async = true;
       script.defer = true;
@@ -96,7 +96,7 @@ function MapaContent() {
   );
 }
 
-// 2. O componente principal agora apenas "embrulha" o conteúdo no Suspense
+// 2. COMPONENTE PRINCIPAL: Envolve o conteúdo no Suspense para corrigir o erro
 export default function MapaPage() {
   return (
     <Suspense fallback={<div>Carregando mapa...</div>}>
