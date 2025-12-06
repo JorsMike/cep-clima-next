@@ -43,5 +43,5 @@ Este projeto ilustra na prática a arquitetura de **Frontend Desacoplado** (Jams
 Essa abordagem resultou em um sistema mais seguro, rápido e fácil de manter, onde a interface pode evoluir independentemente dos serviços de dados.
 
 ---
-**Desenvolvido por:** [Seu Nome/Grupo]
+**Desenvolvido por:** [Mike Vargas]
 **Disciplina:** Desenvolvimento Web/Frontend
