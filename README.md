@@ -44,4 +44,4 @@ Essa abordagem resultou em um sistema mais seguro, rápido e fácil de manter, o
 
 ---
 **Desenvolvido por:** [Mike Vargas]
-**Disciplina:** Desenvolvimento Web/Frontend
+**Disciplina:** Sistemas para internet II
